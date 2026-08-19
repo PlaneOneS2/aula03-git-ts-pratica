@@ -1,0 +1,114 @@
+# ============================================
+# DEPENDÊNCIAS
+# ============================================
+# Pasta gerada pelo npm/yarn com todas as libs do projeto.
+# Ela é recriada automaticamente ao rodar "npm install".
+# Subir essa pasta = +100MB de lixo no GitHub.
+node_modules/
+.expo-shared/
+
+# ============================================
+# EXPO
+# ============================================
+# Arquivos temporários e de cache gerados pelo Expo.
+.expo/
+dist/
+web-build/
+
+# ============================================
+# BUILDS NATIVOS (iOS e Android)
+# ============================================
+# Arquivos compilados e específicos de cada plataforma.
+# Eles são gerados localmente ou pelo EAS Build.
+android/app/build/
+android/.gradle/
+android/local.properties
+android/.idea/
+ios/build/
+ios/Pods/
+ios/.xcode.env.local
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+DerivedData/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# ============================================
+# VARIÁVEIS DE AMBIENTE E SEGREDOS
+# ============================================
+# Nunca suba chaves de API, tokens ou senhas!
+# (Isso será reforçado na Aula 08 - Segurança/LGPD)
+.env
+.env.local
+.env.*.local
+*.pem
+
+# ============================================
+# ARQUIVOS DE SISTEMA
+# ============================================
+# Arquivos "invisíveis" criados automaticamente pelo SO.
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ============================================
+# EDITORES E IDEs
+# ============================================
+# Configurações locais de editores (cada aluno tem a sua).
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# ============================================
+# LOGS E TEMPORÁRIOS
+# ============================================
+# Logs de execução e arquivos temporários.
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+*.tsbuildinfo
+
+# ============================================
+# TESTES E COBERTURA
+# ============================================
+# Relatórios gerados por ferramentas de teste.
+coverage/
+.nyc_output/
+
+# ============================================
+# METRO BUNDLER
+# ============================================
+# Cache do Metro (bundler do React Native).
+.metro-health-check*
+
+# ============================================
+# OUTROS
+# ============================================
+# Arquivos de configuração local que não devem ser compartilhados.
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
