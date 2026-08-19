@@ -7,7 +7,7 @@ import { fetchTasks } from './services/api';
 // ⚠️ PONTO DE CONFLITO PROPOSITAL: 
 // Cada aluno deve alterar "App de Tarefas" para "App de Tarefas - [SEU NOME]"
 // Isso garantirá um conflito de merge para ser resolvido na aula!
-const APP_TITLE = "App de Tarefas"; 
+const APP_TITLE = "App de Tarefas - JamesCampos"; 
 
 export default function App() {
   const [tasks, setTasks] = useState([]);
