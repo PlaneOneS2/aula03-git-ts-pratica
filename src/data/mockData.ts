@@ -1,41 +1,43 @@
-import {Business} from "../types";
+import { Business } from '../types';
 
 export const mockBusinesses: Business[] = [
   {
-    id: "1",
-    name: "Café do Bairro",
-    category: "Café",
-    description: "Um café aconchegante no coração do bairro.",
-    rating: 4.5,
+    id: '1',
+    name: 'Padaria Pão Quente',
+    category: 'Padaria',
+    description: 'Pão francês quentinho todo dia às 6h.',
+    rating: 4.7,
     distance: 0.3,
     openingHours: 'Seg-Sáb: 6h às 20h',
     products: [
-      {
-        id: "p1",
-        name: "Cappuccino",
-        price: 8.5,
-      },
-      {
-        id: "p2",
-        name: "Bolo de Cenoura",
-        price: 12.0,
-      },
+      { id: 'p1', name: 'Pão Francês', price: 0.75 },
+      { id: 'p2', name: 'Bolo de Chocolate', price: 45.00 },
     ],
-    },
+  },
   {
-    id: "2",
-    name: "Padaria do Bairro",
-    category: "Padaria",
-    description: "Padaria tradicional com pães fresquinhos todos os dias.",
-    rating: 4.7,
-    distance: 0.5,
-    openingHours: 'Sab-Dom: 6h às 20h',
+    id: '2',
+    name: 'Barbearia do Zé',
+    category: 'Salão',
+    description: 'Corte clássico e moderno. Cerveja gelada.',
+    rating: 4.9,
+    distance: 0.8,
+    openingHours: 'Ter-Sáb: 9h às 20h',
     products: [
-      {
-        id: "p3",
-        name: "Pão Francês",
-        price: 1.5,
-      },
+      { id: 'p3', name: 'Corte Masculino', price: 35.00 },
     ],
-  }
-]
+  },
+  {
+    id: '3',
+    name: 'Farmácia Cura Tudo',
+    category: 'Farmácia',
+    description: 'Onde você encontra tudo que precisa.',
+    rating: 2.9,
+    distance: 0.8,
+    openingHours: 'Ter-Sáb: 8h às 20h',
+    products: [
+      { id: 'p4', name: 'Dipirona', price: 5.00 },
+    ],
+  },
+];
+
+export const categories: string[] = ['Padaria', 'Salão', 'Oficina', 'Mercado', 'Farmácia'];

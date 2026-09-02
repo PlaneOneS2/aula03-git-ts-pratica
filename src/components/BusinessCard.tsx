@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
-import { colors, spacing, borderRadius } from '../themes/colors';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { colors, spacing, borderRadius } from '../theme/colors';
 import { Business } from '../types';
 
 interface BusinessCardProps {
@@ -15,8 +15,8 @@ export const BusinessCard: React.FC<BusinessCardProps> = ({ business, onPress })
         <Text style={styles.name}>{business.name}</Text>
         <Text style={styles.category}>{business.category}</Text>
         <View style={styles.infoRow}>
-          <Text style={styles.rating}> ⭐{business.rating.toFixed(1)}</Text>
-          <Text style={styles.distance}>Distance: {business.distance} km</Text>
+          <Text style={styles.rating}>⭐ {business.rating.toFixed(1)}</Text>
+          <Text style={styles.distance}>• {business.distance} km</Text>
         </View>
         <Text style={styles.description} numberOfLines={2}>
           {business.description}
@@ -29,48 +29,47 @@ export const BusinessCard: React.FC<BusinessCardProps> = ({ business, onPress })
 const styles = StyleSheet.create({
   card: {
     backgroundColor: colors.white,
-    borderRadius: borderRadius.medium,
-    marginBottom: spacing.medium,
-    padding: spacing.medium,
-    elevation: 3, //sombra no Android
-    shadowColor: '#000', //sombra no iOS
+    borderRadius: borderRadius.md,
+    marginBottom: spacing.md,
+    padding: spacing.md,
+    elevation: 2, // Sombra no Android
+    shadowColor: '#000', // Sombra no iOS
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
-    
   },
-  content: {
-    flex: 1
+  content: { 
+    flex: 1 
   },
-  name: {
-    fontSize: 18,
-    fontWeight: '700',
-    color: colors.text
+  name: { 
+    fontSize: 18, 
+    fontWeight: '700', 
+    color: colors.text 
   },
-  category: {
-    fontSize: 12,
-    color: colors.primary,
-    fontWeight: '600',
-    marginTop: 4
+  category: { 
+    fontSize: 12, 
+    color: colors.primary, 
+    fontWeight: '600', 
+    marginTop: 4 
   },
-  infoRow: {
-    flexDirection: 'row',
-    marginTop: spacing.sm,
-    marginBottom: spacing.xs,
+  infoRow: { 
+    flexDirection: 'row', 
+    marginTop: spacing.sm, 
+    marginBottom: spacing.xs 
   },
-  rating: {
-    fontSize: 14,
-    color: colors.text,
-    fontWeight: '500',
+  rating: { 
+    fontSize: 14, 
+    color: colors.text, 
+    fontWeight: '500' 
   },
-  distance: {
-    fontSize: 14,
-    color: colors.textlight,
-    marginLeft: spacing.xs
+  distance: { 
+    fontSize: 14, 
+    color: colors.textLight, 
+    marginLeft: spacing.xs 
   },
-  description: {
-    fontSize: 14,
-    color: colors.textlight,
-    lineHeight: 20
+  description: { 
+    fontSize: 14, 
+    color: colors.textLight, 
+    lineHeight: 20 
   },
 });

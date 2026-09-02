@@ -1,4 +1,4 @@
-export type category = "Café" | "Padaria" | "Restaurante" | "Loja" | "Serviço";
+export type Category = 'Padaria' | 'Salão' | 'Oficina' | 'Mercado' | 'Farmácia';
 
 export interface Product {
   id: string;
@@ -9,11 +9,11 @@ export interface Product {
 export interface Business {
   id: string;
   name: string;
-  category: category;
+  category: Category;
   description: string;
   rating: number;
-  distance: number; // in kilometers
-  openingHours: string; // e.g., "Seg-Sáb: 6h às 20h"
+  distance: number; 
+  openingHours: string;
   products: Product[];
 }
 
