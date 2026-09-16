@@ -1,59 +1,50 @@
-import React, { useState } from 'react';
-import { View, FlatList, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { BusinessCard } from '../components/BusinessCard';
-import { colors, spacing, borderRadius } from '../theme/colors';
+import { useEffect } from 'react';
+import { firestoreService } from '../services/firestoreService';
+import { Business } from '../types';
+import { storageService } from '../services/storage';
 import { mockBusinesses } from '../data/mockData';
-import { styles } from './HomeScrenn.Styles';
-
-interface HomeScreenProps {
-  navigation: any;
+// Dentro da HomeScreen, substitua o useEffect:
+useEffect(() => {
+loadData();
+loadFavorites();
+// Escutar mudanças em tempo real (opcional)
+const unsubscribe = firestoreService.onBusinessesChange((businesses) => {
+setBusinesses(businesses);
+storageService.saveCache(businesses); // Atualiza cache local
+});
+// Cleanup ao desmontar o componente
+return () => unsubscribe();
+}, []);
+const loadData = async () => {
+setLoading(true);
+setError(null);
+try {
+// Busca do Firestore em vez da API simulada
+const remoteData = await firestoreService.getBusinesses();
+setBusinesses(remoteData);
+await storageService.saveCache(remoteData);
+} catch (err) {
+  setError('Erro ao buscar dados. Mostrando cache local.');
+const cachedData = await storageService.getCache();
+setBusinesses(cachedData.length > 0 ? cachedData : mockBusinesses);
+} finally {
+setLoading(false);
 }
 
-export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
-  const [search, setSearch] = useState('');
-
-  const filtered = mockBusinesses.filter(b =>
-    b.name.toLowerCase().includes(search.toLowerCase())
-  );
-
-  return (
-    <SafeAreaView style={styles.container} edges={['top']}>
-      <View style={styles.header}>
-        <Text style={styles.title}>Vitrine do Bairro</Text>
-        <TextInput
-          style={styles.searchInput}
-          placeholder="🔍 Buscar no bairro..."
-          placeholderTextColor={colors.textLight}
-          value={search}
-          onChangeText={setSearch}
-        />
-      </View>
-
-      <TouchableOpacity
-        style={{ backgroundColor: colors.primary, padding: 12, borderRadius: 8, margin: 16, alignItems: 'center' }}
-        onPress={() => navigation.navigate('Register')}
-        accessibilityRole="button"
-        accessibilityLabel="Botão para cadastrar novo comerciante"
-      >
-        <Text style={{ color: colors.white, fontWeight: 'bold' }}>Cadastrar meu Comércio</Text>
-      </TouchableOpacity>
-
-      <FlatList
-        data={filtered}
-        keyExtractor={(item) => item.id}
-        contentContainerStyle={styles.list}
-        renderItem={({ item }) => (
-          <BusinessCard
-            business={item}
-            onPress={() => navigation.navigate('Details', { businessId: item.id })}
-          />
-        )}
-        ListEmptyComponent={
-          <Text style={styles.emptyText}>Nenhum comerciante encontrado 😕</Text>
-        }
-      />
-    </SafeAreaView>
-  );
 };
+function loadFavorites() {
+  throw new Error('Function not implemented.');
+}
+
+function setLoading(arg0: boolean) {
+  throw new Error('Function not implemented.');
+}
+
+function setError(arg0: string | null) {
+  throw new Error('Function not implemented.');
+}
+
+function setBusinesses(remoteData: Business[]) {
+  throw new Error('Function not implemented.');
+}
 
