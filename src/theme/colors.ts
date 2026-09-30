@@ -1,9 +1,9 @@
 export const colors = {
-  primary: '#FF6B35',      // Laranja Vitrine
-  secondary: '#004E64',    // Verde Bairro
-  background: '#FFF8E7',   // Creme
-  text: '#2D2D2D',         // Carvão
-  textLight: '#6B6B6B',    
+  primary: '#FF6B35', // Laranja Vitrine
+  secondary: '#004E64', // Verde Bairro
+  background: '#FFF8E7', // Creme
+  text: '#2D2D2D', // Carvão
+  textLight: '#6B6B6B',
   white: '#FFFFFF',
   border: '#E5E5E5',
 };

@@ -1,4 +1,12 @@
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, ScrollView } from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+  Alert,
+  ScrollView,
+} from 'react-native';
 import { colors, spacing, borderRadius } from '../theme/colors';
 
 export const styles = StyleSheet.create({
@@ -7,7 +15,12 @@ export const styles = StyleSheet.create({
   title: { fontSize: 24, fontWeight: '700', color: colors.text },
   subtitle: { fontSize: 16, color: colors.textLight, marginBottom: spacing.lg },
   inputGroup: { marginBottom: spacing.md },
-  label: { fontSize: 14, fontWeight: '600', color: colors.text, marginBottom: spacing.xs },
+  label: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: colors.text,
+    marginBottom: spacing.xs,
+  },
   input: {
     backgroundColor: colors.white,
     borderWidth: 1,

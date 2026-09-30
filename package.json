@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+  "start": "expo start",
+  "android": "expo start --android",
+  "ios": "expo start --ios",
+  "lint": "eslint src --ext .ts,.tsx",
+  "lint:fix": "eslint src --ext .ts,.tsx --fix",
+  "web": "expo start --web",
+  "format": "prettier --write \"src/**/*.{ts,tsx,json}\""
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "2.2.0",
@@ -23,6 +26,11 @@
   },
   "devDependencies": {
     "@types/react": "~19.1.0",
+    "@typescript-eslint/eslint-plugin": "^8.71.0",
+    "@typescript-eslint/parser": "^8.71.0",
+    "eslint": "^10.11.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.9.9",
     "typescript": "~5.9.2"
   },
   "private": true

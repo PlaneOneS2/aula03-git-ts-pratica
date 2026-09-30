@@ -7,9 +7,14 @@ import { styles } from './DetailsScreen.Styles';
 
 export const DetailsScreen: React.FC<any> = ({ route }) => {
   const { businessId } = route.params;
-  const business = mockBusinesses.find(b => b.id === businessId);
+  const business = mockBusinesses.find((b) => b.id === businessId);
 
-  if (!business) return <View><Text>Não encontrado</Text></View>;
+  if (!business)
+    return (
+      <View>
+        <Text>Não encontrado</Text>
+      </View>
+    );
 
   return (
     <SafeAreaView style={styles.container} edges={['top']}>
@@ -21,4 +26,3 @@ export const DetailsScreen: React.FC<any> = ({ route }) => {
     </SafeAreaView>
   );
 };
-

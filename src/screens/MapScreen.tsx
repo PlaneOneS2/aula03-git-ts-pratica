@@ -10,14 +10,18 @@ export const MapScreen: React.FC = () => {
         <View style={styles.iconContainer}>
           <Text style={styles.icon}>🗺️</Text>
         </View>
-        
+
         <Text style={styles.title}>Mapa do Bairro</Text>
         <Text style={styles.subtitle}>
-          Em breve você poderá ver todos os comerciantes cadastrados diretamente no mapa!
+          Em breve você poderá ver todos os comerciantes cadastrados diretamente
+          no mapa!
         </Text>
-        
+
         <View style={styles.badge}>
-          <Text style={styles.badgeText}> Implementado na Aula 14 (Extensão)</Text>
+          <Text style={styles.badgeText}>
+            {' '}
+            Implementado na Aula 14 (Extensão)
+          </Text>
         </View>
       </View>
     </SafeAreaView>

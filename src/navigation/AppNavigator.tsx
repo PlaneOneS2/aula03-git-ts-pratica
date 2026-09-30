@@ -15,24 +15,24 @@ const Stack = createNativeStackNavigator();
 function HomeStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen 
-        name="HomeMain" 
-        component={HomeScreen} 
-        options={{ headerShown: false }} 
+      <Stack.Screen
+        name="HomeMain"
+        component={HomeScreen}
+        options={{ headerShown: false }}
       />
-      <Stack.Screen 
-        name="Details" 
+      <Stack.Screen
+        name="Details"
         component={DetailsScreen}
-        options={{ 
+        options={{
           title: 'Detalhes',
           headerStyle: { backgroundColor: colors.secondary },
           headerTintColor: colors.white,
         }}
       />
-      <Stack.Screen 
-        name="Register" 
+      <Stack.Screen
+        name="Register"
         component={RegisterBusinessScreen}
-        options={{ 
+        options={{
           title: 'Novo Comércio',
           headerStyle: { backgroundColor: colors.secondary },
           headerTintColor: colors.white,
@@ -51,14 +51,14 @@ export const AppNavigator: React.FC = () => {
         screenOptions={{
           tabBarActiveTintColor: colors.primary,
           tabBarInactiveTintColor: colors.textLight,
-          tabBarStyle: { 
-            backgroundColor: colors.white, 
-            borderTopColor: colors.border, 
-            paddingTop: 8, 
+          tabBarStyle: {
+            backgroundColor: colors.white,
+            borderTopColor: colors.border,
+            paddingTop: 8,
             paddingBottom: insets.bottom, // <--- APLICA O ESPAÇAMENTO DINÂMICO
-            minHeight: 60, 
-            elevation: 10, 
-            shadowColor: '#000', 
+            minHeight: 60,
+            elevation: 10,
+            shadowColor: '#000',
             shadowOffset: { width: 0, height: -2 },
             shadowOpacity: 0.1,
             shadowRadius: 4,
@@ -67,10 +67,26 @@ export const AppNavigator: React.FC = () => {
           headerTintColor: colors.white,
         }}
       >
-        <Tab.Screen name="Início" component={HomeStack} options={{ tabBarLabel: 'Início' }} />
-        <Tab.Screen name="Mapa" component={MapScreen} options={{ tabBarLabel: 'Mapa' }} />
-        <Tab.Screen name="Favoritos" component={MapScreen} options={{ tabBarLabel: 'Favoritos' }} />
-        <Tab.Screen name="Perfil" component={MapScreen} options={{ tabBarLabel: 'Perfil' }} />
+        <Tab.Screen
+          name="Início"
+          component={HomeStack}
+          options={{ tabBarLabel: 'Início' }}
+        />
+        <Tab.Screen
+          name="Mapa"
+          component={MapScreen}
+          options={{ tabBarLabel: 'Mapa' }}
+        />
+        <Tab.Screen
+          name="Favoritos"
+          component={MapScreen}
+          options={{ tabBarLabel: 'Favoritos' }}
+        />
+        <Tab.Screen
+          name="Perfil"
+          component={MapScreen}
+          options={{ tabBarLabel: 'Perfil' }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );

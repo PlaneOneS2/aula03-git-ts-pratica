@@ -1,4 +1,4 @@
-export const colors = { 
+export const colors = {
   primary: '#FF6B35', // Coral
   secondary: '#004E64', // Green
   background: '#FFF8E7', // Light Gray

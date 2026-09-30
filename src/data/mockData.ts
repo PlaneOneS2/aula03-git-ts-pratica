@@ -11,7 +11,7 @@ export const mockBusinesses: Business[] = [
     openingHours: 'Seg-Sáb: 6h às 20h',
     products: [
       { id: 'p1', name: 'Pão Francês', price: 0.75 },
-      { id: 'p2', name: 'Bolo de Chocolate', price: 45.00 },
+      { id: 'p2', name: 'Bolo de Chocolate', price: 45.0 },
     ],
   },
   {
@@ -22,9 +22,7 @@ export const mockBusinesses: Business[] = [
     rating: 4.9,
     distance: 0.8,
     openingHours: 'Ter-Sáb: 9h às 20h',
-    products: [
-      { id: 'p3', name: 'Corte Masculino', price: 35.00 },
-    ],
+    products: [{ id: 'p3', name: 'Corte Masculino', price: 35.0 }],
   },
   {
     id: '3',
@@ -34,10 +32,14 @@ export const mockBusinesses: Business[] = [
     rating: 2.9,
     distance: 0.8,
     openingHours: 'Ter-Sáb: 8h às 20h',
-    products: [
-      { id: 'p4', name: 'Dipirona', price: 5.00 },
-    ],
+    products: [{ id: 'p4', name: 'Dipirona', price: 5.0 }],
   },
 ];
 
-export const categories: string[] = ['Padaria', 'Salão', 'Oficina', 'Mercado', 'Farmácia'];
+export const categories: string[] = [
+  'Padaria',
+  'Salão',
+  'Oficina',
+  'Mercado',
+  'Farmácia',
+];
